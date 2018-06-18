@@ -3,7 +3,7 @@ python:
   - "3.6"
 # command to install dependencies
 before_install:
-#  - sudo apt-get -qq update
+  - openssl aes-256-cbc -K $encrypted_769a2da54a6d_key -iv $encrypted_769a2da54a6d_iv -in keys.txt.enc -out keys.txt -d
 install:
   - pip install requests
 # command to run tests
