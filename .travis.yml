@@ -20,7 +20,7 @@ jobs:
       deploy: &heroku
         provider: heroku
         app: sf-stages-staging
-        api_key: $HEROKU_AUTH_TOKEN
+        api_key: "911d44a8-e091-486b-a4a9-b8a3e459edcf"
         on: sf-stages-demo
     - stage: test staging
       script: 'curl http://sf-stages-staging.herokuapp.com'
