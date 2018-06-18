@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.6"
+# command to install dependencies
+before_install:
+#  - sudo apt-get -qq update
+install:
+  - pip install requests
+# command to run tests
+script:
+  - python APIAggregator_github.py 
