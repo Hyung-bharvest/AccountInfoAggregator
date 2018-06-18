@@ -6,7 +6,6 @@ import hmac
 import requests
 import json
 import os
-import keys
 
 #apikey and secretkey settings
 Binance_apikey = os.environ['Binance_apikey']
@@ -194,4 +193,3 @@ if sum_flag>0:
         sum_usdvalue = sum_usdvalue+Balance_array[i][4]
         
 print(sum_usdvalue / ETHPrice)
-print(keys.testKey)
