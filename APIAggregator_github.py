@@ -28,7 +28,6 @@ IDEX_flag=1
 sum_flag = Binance_flag+OKEX_flag+BitMEX_flag+Bibox_flag+IDEX_flag
 
 Balance_array = ['','',0,0,0]*999
-BalanceSum_array = ['',0]*999
 CoinPrice_array = ['',0]*9999
 ETHPrice = 0
 
@@ -193,19 +192,4 @@ if sum_flag>0:
     for i in range(0,len(Balance_array)):
         sum_usdvalue = sum_usdvalue+Balance_array[i][4]
         
-    BalanceSum_count = 0
-    for i in range(0,len(Balance_array)):
-        exist_check = 0
-        for k in range(0,BalanceSum_count):
-            if BalanceSum_array[k][0] == Balance_array[i][0]:
-                BalanceSum_array[BalanceSum_count][1] = BalanceSum_array[BalanceSum_count][1] + Balance_array[i][3]
-                BalanceSum_count = BalanceSum_count + 1
-                exist_check = 1
-        if exist_check == 0:
-            BalanceSum_array[BalanceSum_count][0] = Balance_array[i][0]
-            BalanceSum_array[BalanceSum_count][1] = Balance_array[i][3]
-            BalanceSum_count = BalanceSum_count + 1
-    BalanceSum_array = BalanceSum_array[0:BalanceSum_count]
-    print(BalanceSum_array)
-
 print(sum_usdvalue / ETHPrice)
