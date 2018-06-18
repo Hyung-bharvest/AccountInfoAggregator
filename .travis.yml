@@ -9,25 +9,3 @@ install:
 # command to run tests
 script:
   - python APIAggregator_github.py 
-jobs:
-  include:
-    - stage: unit tests
-      script: echo one
-    - stage: unit tests
-      script: echo two
-    - stage: deploy to staging
-      script: skip
-      deploy: &heroku
-        provider: heroku
-        app: sf-stages-staging
-        api_key: "911d44a8-e091-486b-a4a9-b8a3e459edcf"
-        on: sf-stages-demo
-    - stage: test staging
-      script: 'curl http://sf-stages-staging.herokuapp.com'
-    - stage: deploy to production
-      script: /bin/true
-      deploy:
-        <<: *heroku
-        app: sf-stages-production
-    - stage: test production
-      script: 'curl http://sf-stages-production.herokuapp.com'
