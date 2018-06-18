@@ -3,9 +3,9 @@ python:
   - "3.6"
 # command to install dependencies
 before_install:
-  - openssl aes-256-cbc -K $encrypted_769a2da54a6d_key -iv $encrypted_769a2da54a6d_iv -in keys.txt.enc -out keys.txt -d
+  - openssl aes-256-cbc -K encrypted_769a2da54a6d_key -iv encrypted_769a2da54a6d_iv -in keys.txt.enc -out keys.txt -d
 install:
   - pip install requests
 # command to run tests
 script:
-  - python APIAggregator_github.py 
+  - python APIAggregator_github.py
